@@ -4,169 +4,93 @@
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
   const root = document.documentElement;
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
 
   /* ---------- Theme ---------- */
+  const toHex = (color) => {
+    const cv = document.createElement('canvas'); cv.width = cv.height = 1;
+    const ctx = cv.getContext('2d');
+    if (!ctx) return color;
+    ctx.fillStyle = color; ctx.fillRect(0, 0, 1, 1);
+    const [r, g, b] = ctx.getImageData(0, 0, 1, 1).data;
+    return '#' + [r, g, b].map((n) => n.toString(16).padStart(2, '0')).join('');
+  };
   const themeBtn = $('#theme-toggle');
+  const themeMeta = $('meta[name="theme-color"]');
   function setTheme(t, persist) {
     root.dataset.theme = t;
     themeBtn.setAttribute('aria-label', t === 'dark' ? 'Gunakan tema terang' : 'Gunakan tema gelap');
-    themeBtn.title = themeBtn.getAttribute('aria-label');
-    $('meta[name="theme-color"]').content = t === 'dark' ? '#0F1214' : '#FFFFFF';
-    if (persist) { try { localStorage.setItem('ingatin-theme', t); } catch (_) { /* ignore */ } }
+    // Browser chrome follows the paper token of the active theme (normalised to hex via canvas).
+    themeMeta.content = toHex(getComputedStyle(document.body).backgroundColor);
+    if (persist) { try { localStorage.setItem('ingatin-theme', t); } catch (_) { /* private mode */ } }
   }
   setTheme(root.dataset.theme || 'light', false);
   themeBtn.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark', true));
 
-  /* ---------- Mobile menu ---------- */
-  const menuBtn = $('#menu-toggle');
-  const menu = $('#mobile-menu');
-  const setMenu = (open) => {
-    menu.hidden = !open;
-    menuBtn.setAttribute('aria-expanded', String(open));
-    menuBtn.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
-  };
-  menuBtn.addEventListener('click', () => setMenu(menu.hidden));
-  menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) { setMenu(false); menuBtn.focus(); } });
+  /* ---------- Edition line ---------- */
+  const now = new Date();
+  const edition = new Intl.DateTimeFormat('id-ID', { month: 'long', year: 'numeric', timeZone: 'Asia/Jakarta' }).format(now);
+  $$('[data-edition]').forEach((el) => { el.textContent = edition; });
+  $$('[data-year]').forEach((el) => { el.textContent = String(now.getFullYear()); });
 
-  /* ---------- Scroll spy ---------- */
-  const navLinks = $$('.main-nav a');
-  const spyTargets = navLinks.map((a) => $(a.getAttribute('href'))).filter(Boolean);
-  if ('IntersectionObserver' in window) {
-    const ratios = new Map();
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((en) => ratios.set(en.target.id, en.isIntersecting ? en.intersectionRatio : 0));
-      let best = null, max = 0;
-      spyTargets.forEach((t) => { const r = ratios.get(t.id) || 0; if (r > max) { max = r; best = t.id; } });
-      navLinks.forEach((a) => a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + best)));
-    }, { rootMargin: '-35% 0px -55% 0px', threshold: [0, .01, .5, 1] });
-    spyTargets.forEach((t) => io.observe(t));
-  }
-
-  /* ---------- Portfolio showcase ---------- */
-  /* icons: filter_list, map, handshake, dark_mode, search, shopping_bag, sell, chat, event_available, bed, photo_library, receipt_long */
-  const PF = {
-    'lumbung-niaga': {
-      url: 'lumbungniaga.co.id', name: 'PT Lumbung Niaga Nusantara', kicker: 'Company profile · Distributor FMCG',
-      features: [['filter_list', 'Filter kategori produk'], ['map', 'Info 4 depo'], ['handshake', 'Formulir kemitraan'], ['dark_mode', 'Mode gelap']],
-    },
-    'rara-roastery': {
-      url: 'rararoastery.id', name: 'Rara Roastery', kicker: 'Website jualan pribadi · Kopi',
-      features: [['search', 'Pencarian & urutkan'], ['shopping_bag', 'Keranjang tersimpan'], ['sell', 'Voucher & ongkir'], ['chat', 'Checkout WhatsApp']],
-    },
-    'kirana-ubud': {
-      url: 'kiranaubud.com', name: 'Kirana Ubud', kicker: 'Company profile · Hotel & resort',
-      features: [['event_available', 'Cek ketersediaan'], ['bed', 'Pilihan kamar'], ['photo_library', 'Galeri carousel'], ['receipt_long', 'Pemesanan 3 langkah']],
-    },
-  };
+  /* ---------- Live Material 3 colour plate ---------- */
   const schemes = window.M3_SCHEMES || {};
-  const preview = $('#preview');
-  const items = $$('.pf-item[data-pf]');
-
-  function showPortfolio(id, animate) {
-    const p = PF[id]; const s = schemes[id];
-    items.forEach((it) => it.setAttribute('aria-selected', String(it.dataset.pf === id)));
-    const set = (sel, attr, val) => { const el = $(sel); if (el) el[attr] = val; };
-    set('#pv-url', 'textContent', p.url);
-    set('#pv-name', 'textContent', p.name);
-    set('#pv-kicker', 'textContent', p.kicker);
-    set('#pv-open', 'href', `portfolio/${id}/index.html`);
-    $('#pv-open').setAttribute('aria-label', `Buka demo ${p.name}`);
-    ['desk', 'mob'].forEach((kind) => ['light', 'dark'].forEach((t) => {
-      const img = $(`#pv-${kind}-${t}`);
-      img.src = `assets/img/shots/${id}-${kind === 'desk' ? 'desktop' : 'mobile'}-${t}.webp`;
-      img.alt = `Tampilan ${kind === 'desk' ? 'desktop' : 'ponsel'} ${p.name}${t === 'dark' ? ' (mode gelap)' : ''}`;
-    }));
-    $('#pv-features').innerHTML = p.features.map(([icon, label]) => `<li><span class="ms">${icon}</span>${label}</li>`).join('');
-    if (s) {
-      $('#pv-seed').textContent = s.seed.toUpperCase();
-      const roles = ['primary', 'primary-container', 'secondary-container', 'tertiary-container', 'surface-container-high'];
-      const mode = root.dataset.theme === 'dark' ? 'dark' : 'light';
-      $('#pv-swatches').innerHTML = roles.map((r) => `<span title="${r}" style="background:${s[mode][r]}"></span>`).join('');
-    }
-    if (animate && !reduce.matches) {
-      preview.classList.remove('swap'); void preview.offsetWidth; preview.classList.add('swap');
-    }
-  }
-  items.forEach((it) => it.addEventListener('click', () => {
-    showPortfolio(it.dataset.pf, true);
-    // Stacked layout: bring the preview into view after picking an item.
-    if (matchMedia('(max-width: 999px)').matches) {
-      const top = preview.getBoundingClientRect().top + scrollY - 76;
-      window.scrollTo({ top, behavior: reduce.matches ? 'auto' : 'smooth' });
-    }
-  }));
-  $('#pf-list').addEventListener('keydown', (e) => {
-    if (!['ArrowDown', 'ArrowUp'].includes(e.key)) return;
-    const visible = items.filter((i) => !i.closest('li').hidden);
-    const idx = visible.indexOf(document.activeElement);
-    if (idx < 0) return;
-    e.preventDefault();
-    const next = visible[(idx + (e.key === 'ArrowDown' ? 1 : -1) + visible.length) % visible.length];
-    next.focus(); showPortfolio(next.dataset.pf, true);
-  });
-  new MutationObserver(() => {
-    const cur = items.find((i) => i.getAttribute('aria-selected') === 'true');
-    if (cur) showPortfolio(cur.dataset.pf, false);
-  }).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
-
-  // Category tabs
-  const tabs = $$('#cat-tabs [role="tab"]');
-  function selectCat(tab, focus) {
-    tabs.forEach((t) => { const on = t === tab; t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; });
-    if (focus) tab.focus();
-    const cat = tab.dataset.cat;
-    let firstVisible = null;
-    items.forEach((it) => {
-      const show = cat === 'semua' || it.dataset.cats.split(' ').includes(cat);
-      it.closest('li').hidden = !show;
-      if (show && !firstVisible) firstVisible = it;
-    });
-    const current = items.find((i) => i.getAttribute('aria-selected') === 'true');
-    if (firstVisible && (!current || current.closest('li').hidden)) showPortfolio(firstVisible.dataset.pf, true);
-  }
-  tabs.forEach((t) => {
-    t.addEventListener('click', () => selectCat(t));
-    t.addEventListener('keydown', (e) => {
-      const i = tabs.indexOf(t);
-      const next = { ArrowRight: tabs[(i + 1) % tabs.length], ArrowLeft: tabs[(i - 1 + tabs.length) % tabs.length] }[e.key];
-      if (next) { e.preventDefault(); selectCat(next, true); }
-    });
-  });
-  showPortfolio('lumbung-niaga', false);
-
-  /* ---------- Live Material 3 color demo ---------- */
   const demo = $('#m3demo');
   const picker = $('#seed-picker');
-  let seedId = 'ingatin';
-  let demoMode = 'light';
   const LABELS = { ingatin: 'ingatin', 'lumbung-niaga': 'Lumbung Niaga', 'rara-roastery': 'Rara Roastery', 'kirana-ubud': 'Kirana Ubud', plum: 'Plum', kunyit: 'Kunyit' };
-  picker.innerHTML = Object.keys(schemes).map((id) => `<button class="seed" type="button" role="radio" aria-checked="${id === seedId}" data-seed="${id}" style="--c:${schemes[id].seed}"><i></i>${LABELS[id] || schemes[id].label}</button>`).join('');
-  const ROLE_SWATCHES = [
-    ['primary', 'Primary'], ['secondary', 'Secondary'], ['tertiary', 'Tertiary'],
-    ['primary-container', 'P. container'], ['surface-container', 'Surface'], ['outline', 'Outline'],
+  const ROLES = [
+    ['primary', 'Primary'],
+    ['on-primary', 'On primary'],
+    ['primary-container', 'Primary container'],
+    ['secondary-container', 'Secondary container'],
+    ['tertiary-container', 'Tertiary container'],
+    ['surface-container', 'Surface container'],
+    ['outline', 'Outline'],
   ];
+  let seedId = schemes.ingatin ? 'ingatin' : Object.keys(schemes)[0];
+  let demoMode = root.dataset.theme === 'dark' ? 'dark' : 'light';
+  $$('.ds-toggle button').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.mode === demoMode)));
+  const label = (id) => LABELS[id] || (schemes[id] && schemes[id].label) || id;
+
+  if (picker && seedId) {
+    picker.innerHTML = Object.keys(schemes).map((id) =>
+      `<button class="seed" type="button" role="radio" aria-checked="${id === seedId}" tabindex="${id === seedId ? 0 : -1}" data-seed="${id}" style="--c:${schemes[id].seed}"><i aria-hidden="true"></i>${label(id)}</button>`
+    ).join('');
+  }
+
   function applyDemo() {
-    const s = schemes[seedId]; if (!s) return;
+    const s = schemes[seedId];
+    if (!s || !demo) return;
     const c = s[demoMode];
     Object.entries(c).forEach(([k, v]) => demo.style.setProperty(`--md-${k}`, v));
-    $('#m3d-name').textContent = LABELS[seedId] || s.label;
-    $('#m3d-roles').innerHTML = ROLE_SWATCHES.map(([k, label]) => `<div><i style="background:${c[k]}"></i><span>${label}</span></div>`).join('');
+    $('#m3d-name').textContent = label(seedId);
+    $('#legend-seed').textContent = `${label(seedId)}, ${s.seed.toUpperCase()}, mode ${demoMode === 'dark' ? 'gelap' : 'terang'}`;
+    $('#m3d-roles').innerHTML = ROLES.map(([k, name]) =>
+      `<div><dt><i style="background:${c[k]}" aria-hidden="true"></i>${name}</dt><dd>${c[k].toUpperCase()}</dd></div>`
+    ).join('');
   }
-  picker.addEventListener('click', (e) => {
-    const b = e.target.closest('.seed'); if (!b) return;
-    seedId = b.dataset.seed;
-    $$('.seed', picker).forEach((x) => x.setAttribute('aria-checked', String(x === b)));
+
+  function selectSeed(btn, focus) {
+    seedId = btn.dataset.seed;
+    $$('.seed', picker).forEach((x) => {
+      const on = x === btn;
+      x.setAttribute('aria-checked', String(on));
+      x.tabIndex = on ? 0 : -1;
+    });
+    if (focus) btn.focus();
     applyDemo();
-  });
-  picker.addEventListener('keydown', (e) => {
-    if (!['ArrowRight', 'ArrowLeft', 'ArrowDown', 'ArrowUp'].includes(e.key)) return;
-    const seeds = $$('.seed', picker); const i = seeds.indexOf(document.activeElement); if (i < 0) return;
-    e.preventDefault();
-    const next = seeds[(i + (/Right|Down/.test(e.key) ? 1 : -1) + seeds.length) % seeds.length];
-    next.focus(); next.click();
-  });
+  }
+  if (picker) {
+    picker.addEventListener('click', (e) => { const b = e.target.closest('.seed'); if (b) selectSeed(b, false); });
+    picker.addEventListener('keydown', (e) => {
+      const keys = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
+      if (!(e.key in keys)) return;
+      const seeds = $$('.seed', picker);
+      const i = seeds.indexOf(document.activeElement);
+      if (i < 0) return;
+      e.preventDefault();
+      selectSeed(seeds[(i + keys[e.key] + seeds.length) % seeds.length], true);
+    });
+  }
   $$('.ds-toggle button').forEach((b) => b.addEventListener('click', () => {
     demoMode = b.dataset.mode;
     $$('.ds-toggle button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
@@ -177,47 +101,46 @@
   /* ---------- Contact form -> WhatsApp ---------- */
   const form = $('#contact-form');
   const WA = '6281200000000';
+  const doneBox = $('#form-done');
+
   function check(input) {
-    const tf = input.closest('.tf');
+    const field = input.closest('.field');
     const ok = input.checkValidity();
-    tf.classList.toggle('invalid', !ok);
-    const help = tf.querySelector('.tf-help');
+    field.classList.toggle('invalid', !ok);
+    field.classList.toggle('valid', ok && input.value.trim() !== '');
+    input.setAttribute('aria-invalid', String(!ok));
+    const help = field.querySelector('.field-help');
     if (help) help.textContent = ok ? '' : (input.dataset.error || input.validationMessage);
     return ok;
   }
-  $$('.tf-input[required]', form).forEach((i) => i.addEventListener('input', () => { if (i.closest('.tf').classList.contains('invalid')) check(i); }));
+  // "Touched" pattern: validate on blur, then live once the field has been touched.
+  $$('.field-input[required]', form).forEach((input) => {
+    input.addEventListener('blur', () => { if (input.value.trim() !== '' || input.dataset.touched) { input.dataset.touched = '1'; check(input); } });
+    input.addEventListener('input', () => { if (input.dataset.touched) check(input); });
+  });
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const required = $$('.tf-input[required]', form);
+    const required = $$('.field-input[required]', form);
+    required.forEach((i) => { i.dataset.touched = '1'; });
     const bad = required.filter((i) => !check(i));
     if (bad.length) { bad[0].focus(); return; }
     const d = new FormData(form);
+    const nama = String(d.get('nama')).trim();
+    const bisnis = String(d.get('bisnis') || '').trim();
+    const pesan = String(d.get('pesan') || '').trim();
     const msg = [
       'Halo ingatin, saya ingin konsultasi website.',
       '',
-      `Nama: ${d.get('nama').trim()}`,
-      d.get('bisnis').trim() ? `Bisnis: ${d.get('bisnis').trim()}` : null,
+      `Nama: ${nama}`,
+      bisnis ? `Bisnis: ${bisnis}` : null,
       `Jenis website: ${d.get('jenis')}`,
-      d.get('pesan').trim() ? `\n${d.get('pesan').trim()}` : null,
+      pesan ? `\n${pesan}` : null,
     ].filter((x) => x !== null).join('\n');
     $('#wa-open').href = `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
-    $('#done-text').textContent = `Terima kasih, ${d.get('nama').trim()}. Klik tombol di bawah untuk membuka WhatsApp dengan pesan yang sudah terisi.`;
-    const done = $('#form-done');
-    done.hidden = false;
-    done.focus();
+    $('#done-text').textContent = `Terima kasih, ${nama}. Buka WhatsApp untuk mengirim pesan yang sudah terisi — Anda masih bisa mengubahnya di sana.`;
+    doneBox.hidden = false;
+    doneBox.focus();
   });
-  $('#form-reset').addEventListener('click', () => { $('#form-done').hidden = true; form.querySelector('[name="nama"]').focus(); });
-
-  /* ---------- Reveal on scroll ---------- */
-  const revealEls = $$('.section-head, .showcase, .bento > *, .ds-demo-wrap, .steps > *, .contact-form');
-  revealEls.forEach((el) => el.classList.add('reveal'));
-  if (!('IntersectionObserver' in window) || reduce.matches) revealEls.forEach((el) => el.classList.add('in'));
-  else {
-    const rio = new IntersectionObserver((entries) => entries.forEach((en) => {
-      if (en.isIntersecting) { en.target.classList.add('in'); rio.unobserve(en.target); }
-    }), { rootMargin: '0px 0px -10% 0px' });
-    revealEls.forEach((el, i) => { el.style.transitionDelay = `${(i % 4) * 60}ms`; rio.observe(el); });
-  }
-
-  $$('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
+  $('#form-reset').addEventListener('click', () => { doneBox.hidden = true; $('#f-nama').focus(); });
 })();

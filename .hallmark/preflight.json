@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-09",
+  "framework": "vanilla HTML/CSS/JS (no build)",
+  "fonts_before": "General Sans + IBM Plex Sans + Google Sans Flex (index.html <link>)",
+  "palette_before": "hex blue/grey scale in assets/css/landing.css :root",
+  "motion": "none (no motion library in package.json)",
+  "spacing": "none named before; tokens.css introduces 4-pt scale",
+  "preserved": [
+    "brand blue #0073E6 (accent only)",
+    "IA: karya, layanan, sistem warna, proses, kontak",
+    "WhatsApp form flow",
+    "localStorage key ingatin-theme"
+  ]
+}

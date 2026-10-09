@@ -4,7 +4,7 @@ Website statis (HTML/CSS/JS murni, tanpa build step) untuk studio website **inga
 
 | Halaman | Jenis | Acuan desain | Fitur yang berjalan |
 |---|---|---|---|
-| `index.html` | Landing page ingatin | [mui.com](https://mui.com) — General Sans + IBM Plex Sans, biru `#0073E6`, teks gradien, border hairline, tombol dengan inset shadow | Mode gelap/terang (tersimpan), menu seluler, scroll-spy, filter kategori portofolio, pratinjau desktop+ponsel per tema, demo warna M3 interaktif, formulir → WhatsApp |
+| `index.html` | Landing page ingatin | Editorial (Hallmark redesign): masthead koran, Newsreader + Switzer + JetBrains Mono, kertas hangat, biru ingatin `#0073E6` hanya sebagai aksen | Mode gelap/terang (tersimpan), daftar isi "Dalam edisi ini", tiga diptych karya (screenshot desktop + ponsel, ikut tema), tabel layanan, pelat warna M3 interaktif, langkah kerja, formulir → WhatsApp |
 | `portfolio/lumbung-niaga/` | Company profile distributor FMCG | [Material 3](https://m3.material.io) | Tab visi/misi/nilai, filter lini produk, pemilih depo (connected button group), formulir kemitraan dengan validasi + loading indicator M3 Expressive + dialog sukses |
 | `portfolio/rara-roastery/` | Website jualan pribadi (kopi) | Material 3 Expressive (ROND 100, shape morph) | Pencarian, filter, urutkan, dialog produk (ukuran, gilingan, jumlah), keranjang tersimpan di localStorage, voucher `KOPIPERTAMA`, ongkir per wilayah + gratis ongkir, checkout ke WhatsApp |
 | `portfolio/kirana-ubud/` | Company profile hotel / resort | Material 3 | Widget cek ketersediaan (tanggal + tamu), harga kamar/+sarapan, pemesanan 3 langkah (kamar → data tamu → kode booking), carousel galeri, peta Google Maps |
@@ -23,7 +23,8 @@ Atau buka `index.html` langsung di browser (file://) — semua tautan memakai pa
 
 ```
 index.html                    landing page ingatin
-assets/css/landing.css        gaya landing (MUI-like), light/dark
+tokens.css                    token desain landing (warna OKLCH, font, spasi, motion) terang + gelap
+assets/css/landing.css        gaya landing (editorial), hanya memakai token dari tokens.css
 assets/js/landing.js          interaksi landing
 assets/js/schemes.js          (generated) skema warna M3 untuk demo warna
 assets/img/shots/             screenshot asli tiap portofolio (desktop/ponsel × terang/gelap)
@@ -62,6 +63,6 @@ Tidak ada build step: unggah seluruh folder (kecuali `node_modules/`, `scripts/`
 
 ## Dependensi eksternal (CDN)
 
-- Fontshare: General Sans (landing)
-- Google Fonts: IBM Plex Sans (landing), Google Sans Flex (portofolio), Material Symbols Rounded
+- Fontshare: Switzer (landing)
+- Google Fonts: Newsreader + JetBrains Mono (landing), Google Sans Flex (portofolio), Material Symbols Rounded
 - Google Maps embed (Kirana Ubud, bagian Lokasi)

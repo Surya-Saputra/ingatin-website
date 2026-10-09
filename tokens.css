@@ -1,0 +1,98 @@
+/* ingatin — design tokens (Hallmark custom theme · editorial)
+ * vibe: "broadsheet tenang, kertas hangat, tinta biru"
+ * paper family warm (hue 85) · ink family blue-black (hue 262) · accent = ingatin blue (hue 256)
+ * axes: light / roman-serif / cool
+ */
+:root {
+  /* ---- Colour · light ---- */
+  --color-paper:      oklch(97% 0.008 85);
+  --color-paper-2:    oklch(94.5% 0.011 85);
+  --color-paper-3:    oklch(91% 0.013 85);
+  --color-ink:        oklch(21% 0.025 262);
+  --color-ink-2:      oklch(36% 0.022 262);
+  --color-muted:      oklch(48% 0.018 262);
+  --color-rule:       oklch(80% 0.012 85);
+  --color-rule-2:     oklch(87% 0.010 85);
+  --color-control:    oklch(60% 0.015 262);   /* input + chip borders, ≥3:1 on paper */
+  --color-accent:     oklch(52% 0.18 256);
+  --color-accent-ink: oklch(97% 0.008 85);
+  --color-accent-strong: oklch(44% 0.16 258);
+  --color-focus:      oklch(55% 0.21 256);
+  --color-error:      oklch(50% 0.17 28);
+  --color-success:    oklch(48% 0.11 150);
+  --color-shade:      oklch(21% 0.025 262 / 0.08);
+
+  /* Seed colours of the three demos (content data, same in both modes) */
+  --seed-lumbung: oklch(47.4% 0.100 148);
+  --seed-rara:    oklch(50.3% 0.119 45);
+  --seed-kirana:  oklch(49.2% 0.077 184);
+
+  /* ---- Type ---- */
+  --font-display: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body:    "Switzer", "Helvetica Neue", Arial, sans-serif;
+  --font-outlier: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-icons:   "Material Symbols Rounded";
+
+  --text-xs:      0.8125rem;
+  --text-sm:      0.9375rem;
+  --text-base:    1.0625rem;
+  --text-md:      1.1875rem;
+  --text-lg:      clamp(1.375rem, 1vw + 1.05rem, 1.75rem);
+  --text-xl:      clamp(1.75rem, 1.6vw + 1.2rem, 2.5rem);
+  --text-2xl:     clamp(2.125rem, 2.6vw + 1.2rem, 3.5rem);
+  --text-mast:    clamp(3.25rem, 7vw + 1.25rem, 5.5rem);
+  --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
+
+  /* ---- Space (4-pt) ---- */
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+
+  --page-max:    76rem;
+  --page-gutter: clamp(1rem, 4vw, 2.5rem);
+
+  /* ---- Rules, radii, layers ---- */
+  --rule-hair:    1px;
+  --rule-strong:  2px;
+  --radius-input: 2px;
+  --radius-media: 3px;
+
+  --z-base:   1;
+  --z-raised: 10;
+  --z-sticky: 200;
+
+  /* ---- Motion ---- */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro:   120ms;
+  --dur-short:   220ms;
+  --dur-long:    420ms;
+}
+
+/* ---- Colour · dark (same hues, only L and C move) ---- */
+[data-theme="dark"] {
+  --color-paper:      oklch(17.5% 0.018 262);
+  --color-paper-2:    oklch(21% 0.020 262);
+  --color-paper-3:    oklch(25% 0.020 262);
+  --color-ink:        oklch(93% 0.012 85);
+  --color-ink-2:      oklch(81% 0.012 85);
+  --color-muted:      oklch(70% 0.014 262);
+  --color-rule:       oklch(36% 0.020 262);
+  --color-rule-2:     oklch(28% 0.020 262);
+  --color-control:    oklch(55% 0.020 262);
+  --color-accent:     oklch(74% 0.13 254);
+  --color-accent-ink: oklch(17.5% 0.018 262);
+  --color-accent-strong: oklch(82% 0.10 254);
+  --color-focus:      oklch(78% 0.15 254);
+  --color-error:      oklch(72% 0.14 28);
+  --color-success:    oklch(76% 0.11 150);
+  --color-shade:      oklch(5% 0.02 262 / 0.35);
+}
