@@ -1,0 +1,16 @@
+{
+  "name": "ingatin-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page ingatin + portofolio demo (static HTML/CSS/JS)",
+  "scripts": {
+    "themes": "node scripts/gen-themes.mjs",
+    "shapes": "node scripts/gen-shapes.mjs",
+    "icons": "node scripts/icons.mjs",
+    "build": "npm run themes && npm run shapes && npm run icons",
+    "serve": "python3 -m http.server 4173"
+  },
+  "devDependencies": {
+    "@material/material-color-utilities": "0.4.0"
+  }
+}

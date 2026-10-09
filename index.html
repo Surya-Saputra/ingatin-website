@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ingatin — Studio website untuk bisnis yang ingin selalu diingat</title>
+  <meta name="description" content="ingatin merancang dan membangun website company profile, toko online pribadi, dan website hotel. Lihat portofolio demo yang bisa dicoba langsung.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="ingatin — Studio website">
+  <meta property="og:description" content="Company profile, toko online, dan website hotel yang cepat, rapi di ponsel, dan mudah dikelola.">
+  <meta property="og:image" content="assets/img/shots/kirana-ubud-desktop-light.webp">
+  <script>
+    (function () {
+      var t; try { t = localStorage.getItem('ingatin-theme'); } catch (e) {}
+      if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,400..600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,400..500,0..1,0&icon_names=account_circle,add,apartment,arrow_back,arrow_forward,arrow_upward,bed,chat,check,check_circle,chevron_right,close,coffee,dark_mode,edit,event_available,filter_list,handshake,hotel,light_mode,local_shipping,mail,map,menu,open_in_new,photo_library,receipt_long,restaurant,schedule,school,search,sell,send,shield_lock,shopping_bag,spa,storefront,warehouse&display=block" data-icons>
+  <link rel="stylesheet" href="assets/css/landing.css">
+  <link rel="icon" href="assets/img/logo-mark.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="ingatin — beranda">
+        <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="url(#lg)"/><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3399FF"/><stop offset="1" stop-color="#0059B3"/></linearGradient></defs><rect x="13.5" y="13" width="5" height="12" rx="2.5" fill="#fff"/><circle cx="16" cy="8.5" r="2.9" fill="#fff"/><path d="M21.6 5.4a7.4 7.4 0 0 1 2.6 4.9" stroke="#CCE6FF" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+        <span class="logo-word">ingatin</span>
+      </a>
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <a href="#portofolio">Portofolio</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#sistem-desain">Sistem desain</a>
+        <a href="#proses">Proses</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-square" type="button" id="theme-toggle" aria-label="Ganti tema">
+          <span class="ms theme-icon-dark">dark_mode</span><span class="ms theme-icon-light">light_mode</span>
+        </button>
+        <a class="btn btn-primary btn-sm hide-sm" href="#kontak">Konsultasi gratis</a>
+        <button class="icon-square menu-toggle" type="button" id="menu-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="burger" aria-hidden="true"><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Navigasi seluler" hidden>
+      <div class="container">
+        <a href="#portofolio">Portofolio</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#sistem-desain">Sistem desain</a>
+        <a href="#proses">Proses</a>
+        <a href="#kontak">Kontak</a>
+        <a class="btn btn-primary" href="#kontak">Konsultasi gratis</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <a class="announce" href="#portofolio">
+            <span class="announce-tag">Baru</span>
+            <span>3 demo portofolio bisa dicoba langsung</span>
+            <span class="ms">chevron_right</span>
+          </a>
+          <h1 class="hero-title">Website yang bikin bisnis Anda <span class="grad-text">selalu diingat</span></h1>
+          <p class="hero-lead">ingatin merancang dan membangun website company profile, toko online pribadi, dan website hotel — cepat dibuka, rapi di ponsel, dan isinya bisa Anda kelola sendiri.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary btn-lg" href="#portofolio">Lihat portofolio<span class="ms">arrow_forward</span></a>
+            <a class="btn btn-outlined btn-lg" href="#kontak"><span class="ms">chat</span>Konsultasi gratis</a>
+          </div>
+          <ul class="hero-points" aria-label="Yang Anda dapatkan">
+            <li><span class="ms">check_circle</span>Desain khusus, bukan template pasaran</li>
+            <li><span class="ms">check_circle</span>Mode gelap &amp; terang otomatis</li>
+            <li><span class="ms">check_circle</span>Formulir langsung ke WhatsApp Anda</li>
+          </ul>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-stage">
+            <div class="stage-col">
+              <div class="frame frame-browser">
+                <div class="frame-bar"><i></i><i></i><i></i><span>kiranaubud.com</span></div>
+                <img class="shot-light" src="assets/img/shots/kirana-ubud-desktop-light.webp" alt="" width="1200" height="750">
+                <img class="shot-dark" src="assets/img/shots/kirana-ubud-desktop-dark.webp" alt="" width="1200" height="750">
+              </div>
+              <div class="frame frame-browser">
+                <div class="frame-bar"><i></i><i></i><i></i><span>lumbungniaga.co.id</span></div>
+                <img class="shot-light" src="assets/img/shots/lumbung-niaga-desktop-light.webp" alt="" width="1200" height="750">
+                <img class="shot-dark" src="assets/img/shots/lumbung-niaga-desktop-dark.webp" alt="" width="1200" height="750">
+              </div>
+            </div>
+            <div class="stage-col stage-col-2">
+              <div class="frame frame-phone">
+                <img class="shot-light" src="assets/img/shots/rara-roastery-mobile-light.webp" alt="" width="440" height="952">
+                <img class="shot-dark" src="assets/img/shots/rara-roastery-mobile-dark.webp" alt="" width="440" height="952">
+              </div>
+              <div class="frame frame-browser">
+                <div class="frame-bar"><i></i><i></i><i></i><span>rararoastery.id</span></div>
+                <img class="shot-light" src="assets/img/shots/rara-roastery-desktop-light.webp" alt="" width="1200" height="750">
+                <img class="shot-dark" src="assets/img/shots/rara-roastery-desktop-dark.webp" alt="" width="1200" height="750">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CATEGORY STRIP ============ -->
+    <section class="strip" aria-label="Jenis website yang kami kerjakan">
+      <div class="container strip-inner">
+        <p class="strip-label">Jenis website yang kami kerjakan</p>
+        <ul class="strip-list">
+          <li><span class="ms">apartment</span>Company profile</li>
+          <li><span class="ms">local_shipping</span>Distributor &amp; pabrik</li>
+          <li><span class="ms">storefront</span>Toko online pribadi</li>
+          <li><span class="ms">hotel</span>Hotel &amp; villa</li>
+          <li><span class="ms">restaurant</span>Kafe &amp; restoran</li>
+          <li><span class="ms">school</span>Sekolah &amp; kursus</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ PORTFOLIO ============ -->
+    <section class="section section-tint" id="portofolio">
+      <div class="container">
+        <div class="section-head split">
+          <div>
+            <p class="overline">Portofolio</p>
+            <h2 class="h2">Satu sistem desain, <span class="grad-text">tiga karakter berbeda</span></h2>
+          </div>
+          <p class="lead">Setiap demo adalah website utuh yang bisa dibuka dan dicoba — dari filter produk dan keranjang belanja sampai alur pemesanan kamar. Semuanya dibangun di atas Material Design 3.</p>
+        </div>
+
+        <div class="tabs-row">
+          <div class="seg" role="tablist" aria-label="Filter kategori portofolio" id="cat-tabs">
+            <button type="button" role="tab" aria-selected="true" data-cat="semua">Semua <span class="count">3</span></button>
+            <button type="button" role="tab" aria-selected="false" data-cat="company" tabindex="-1">Company profile <span class="count">2</span></button>
+            <button type="button" role="tab" aria-selected="false" data-cat="toko" tabindex="-1">Toko online <span class="count">1</span></button>
+            <button type="button" role="tab" aria-selected="false" data-cat="hotel" tabindex="-1">Hotel &amp; villa <span class="count">1</span></button>
+          </div>
+        </div>
+
+        <div class="showcase">
+          <ul class="pf-list" id="pf-list" role="listbox" aria-label="Pilih portofolio">
+            <li>
+              <button type="button" class="pf-item" role="option" aria-selected="true" data-pf="lumbung-niaga" data-cats="company">
+                <span class="pf-icon" style="--seed:#2E6B3A"><span class="ms">warehouse</span></span>
+                <span class="pf-text">
+                  <span class="pf-kicker">Company profile · Distributor FMCG</span>
+                  <span class="pf-name">PT Lumbung Niaga Nusantara</span>
+                  <span class="pf-desc">Profil distributor dengan katalog lini produk, info empat depo, dan formulir kemitraan untuk toko maupun prinsipal.</span>
+                </span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="pf-item" role="option" aria-selected="false" data-pf="rara-roastery" data-cats="toko">
+                <span class="pf-icon" style="--seed:#9A4A22"><span class="ms">coffee</span></span>
+                <span class="pf-text">
+                  <span class="pf-kicker">Website jualan pribadi · Kopi</span>
+                  <span class="pf-name">Rara Roastery</span>
+                  <span class="pf-desc">Toko online satu orang: katalog dengan pencarian, keranjang tersimpan, voucher, dan checkout ke WhatsApp.</span>
+                </span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="pf-item" role="option" aria-selected="false" data-pf="kirana-ubud" data-cats="company hotel">
+                <span class="pf-icon" style="--seed:#1F6F66"><span class="ms">spa</span></span>
+                <span class="pf-text">
+                  <span class="pf-kicker">Company profile · Hotel &amp; resort</span>
+                  <span class="pf-name">Kirana Ubud</span>
+                  <span class="pf-desc">Situs boutique resort dengan cek ketersediaan, pilihan kamar, galeri, peta, dan pemesanan tiga langkah.</span>
+                </span>
+              </button>
+            </li>
+            <li class="pf-more">
+              <a class="pf-item pf-item-cta" href="#kontak">
+                <span class="pf-icon pf-icon-add"><span class="ms">add</span></span>
+                <span class="pf-text">
+                  <span class="pf-name">Bisnis Anda berikutnya?</span>
+                  <span class="pf-desc">Kafe, klinik, sekolah, kontraktor — ceritakan kebutuhan Anda.</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+
+          <article class="preview" id="preview" aria-live="polite">
+            <div class="preview-stage">
+              <div class="frame frame-browser preview-browser">
+                <div class="frame-bar"><i></i><i></i><i></i><span id="pv-url">lumbungniaga.co.id</span></div>
+                <img class="shot-light" id="pv-desk-light" src="assets/img/shots/lumbung-niaga-desktop-light.webp" alt="Tampilan desktop Lumbung Niaga" width="1200" height="750">
+                <img class="shot-dark" id="pv-desk-dark" src="assets/img/shots/lumbung-niaga-desktop-dark.webp" alt="Tampilan desktop Lumbung Niaga (mode gelap)" width="1200" height="750">
+              </div>
+              <div class="frame frame-phone preview-phone">
+                <img class="shot-light" id="pv-mob-light" src="assets/img/shots/lumbung-niaga-mobile-light.webp" alt="Tampilan ponsel Lumbung Niaga" width="440" height="952">
+                <img class="shot-dark" id="pv-mob-dark" src="assets/img/shots/lumbung-niaga-mobile-dark.webp" alt="Tampilan ponsel Lumbung Niaga (mode gelap)" width="440" height="952">
+              </div>
+            </div>
+            <div class="preview-info">
+              <div class="pv-head">
+                <div>
+                  <p class="pv-kicker" id="pv-kicker">Company profile · Distributor FMCG</p>
+                  <h3 class="pv-name" id="pv-name">PT Lumbung Niaga Nusantara</h3>
+                </div>
+                <a class="btn btn-primary" id="pv-open" href="portfolio/lumbung-niaga/index.html">Buka demo<span class="ms">open_in_new</span></a>
+              </div>
+              <ul class="pv-features" id="pv-features"></ul>
+              <div class="pv-palette">
+                <span class="pv-label">Palet M3 dari warna dasar <code id="pv-seed">#2E6B3A</code></span>
+                <div class="swatches" id="pv-swatches"></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section" id="layanan">
+      <div class="container">
+        <div class="section-head">
+          <p class="overline">Layanan</p>
+          <h2 class="h2">Dari profil perusahaan sampai <span class="grad-text">pemesanan kamar</span></h2>
+          <p class="lead">Kami fokus pada website yang menghasilkan pertanyaan, pesanan, dan tamu — bukan sekadar halaman yang terlihat bagus.</p>
+        </div>
+        <div class="bento">
+          <article class="b-card b-wide">
+            <div class="b-head">
+              <span class="b-icon"><span class="ms">apartment</span></span>
+              <div>
+                <h3 class="h3">Company profile</h3>
+                <p class="muted">Untuk distributor, pabrik, kontraktor, dan jasa profesional yang perlu terlihat kredibel di mata calon mitra.</p>
+              </div>
+            </div>
+            <ul class="b-list">
+              <li><span class="ms">check</span>Profil, sejarah, visi–misi, dan legalitas</li>
+              <li><span class="ms">check</span>Katalog produk atau layanan dengan filter</li>
+              <li><span class="ms">check</span>Formulir prospek &amp; kemitraan ke WhatsApp/email</li>
+              <li><span class="ms">check</span>Peta lokasi kantor, gudang, atau cabang</li>
+              <li><span class="ms">check</span>SEO dasar &amp; Google Business Profile</li>
+              <li><span class="ms">check</span>Bahasa Indonesia &amp; Inggris (opsional)</li>
+            </ul>
+            <a class="b-link" href="portfolio/lumbung-niaga/index.html">Contoh: Lumbung Niaga<span class="ms">arrow_forward</span></a>
+          </article>
+          <article class="b-card">
+            <div class="b-head">
+              <span class="b-icon"><span class="ms">storefront</span></span>
+              <div>
+                <h3 class="h3">Toko online pribadi</h3>
+                <p class="muted">Jual langsung tanpa potongan marketplace. Pesanan masuk rapi ke WhatsApp Anda.</p>
+              </div>
+            </div>
+            <ul class="b-list">
+              <li><span class="ms">check</span>Katalog, varian, dan stok habis</li>
+              <li><span class="ms">check</span>Keranjang, ongkir, dan voucher</li>
+              <li><span class="ms">check</span>Checkout ke WhatsApp / QRIS</li>
+            </ul>
+            <a class="b-link" href="portfolio/rara-roastery/index.html">Contoh: Rara Roastery<span class="ms">arrow_forward</span></a>
+          </article>
+          <article class="b-card">
+            <div class="b-head">
+              <span class="b-icon"><span class="ms">hotel</span></span>
+              <div>
+                <h3 class="h3">Website hotel &amp; villa</h3>
+                <p class="muted">Ajak tamu memesan langsung, bukan lewat OTA yang memotong komisi.</p>
+              </div>
+            </div>
+            <ul class="b-list">
+              <li><span class="ms">check</span>Tipe kamar, harga, dan galeri</li>
+              <li><span class="ms">check</span>Cek ketersediaan &amp; formulir pesan</li>
+              <li><span class="ms">check</span>Peta, fasilitas, dan ulasan tamu</li>
+            </ul>
+            <a class="b-link" href="portfolio/kirana-ubud/index.html">Contoh: Kirana Ubud<span class="ms">arrow_forward</span></a>
+          </article>
+          <article class="b-card b-dark">
+            <div class="b-head">
+              <span class="b-icon"><span class="ms">shield_lock</span></span>
+              <div>
+                <h3 class="h3">Domain, hosting &amp; perawatan</h3>
+                <p class="muted">Kami urus yang teknis: domain .id/.com, hosting, SSL, backup harian, dan pembaruan isi bulanan.</p>
+              </div>
+            </div>
+            <div class="b-tags">
+              <span>SSL</span><span>Backup harian</span><span>Laporan bulanan</span><span>Dukungan WhatsApp</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DESIGN SYSTEM (dark) ============ -->
+    <section class="section section-dark" id="sistem-desain">
+      <div class="container ds-grid">
+        <div class="ds-copy">
+          <p class="overline overline-dark">Sistem desain</p>
+          <h2 class="h2">Satu warna brand, <span class="grad-text">satu sistem desain utuh</span></h2>
+          <p class="lead">Semua portofolio di atas memakai komponen Material Design 3 yang sama. Yang membedakan hanya satu warna dasar — warna tombol, latar, kontras teks, sampai mode gelap dihitung otomatis dari warna itu.</p>
+          <p class="lead">Coba pilih warna di bawah. Begitulah website Anda akan menyesuaikan warna logo Anda.</p>
+          <div class="seed-picker" role="radiogroup" aria-label="Pilih warna dasar" id="seed-picker"></div>
+          <div class="ds-toggle" role="group" aria-label="Mode pratinjau">
+            <button type="button" aria-pressed="true" data-mode="light"><span class="ms">light_mode</span>Terang</button>
+            <button type="button" aria-pressed="false" data-mode="dark"><span class="ms">dark_mode</span>Gelap</button>
+          </div>
+        </div>
+        <div class="ds-demo-wrap">
+          <div class="m3demo" id="m3demo">
+            <div class="m3d-bar">
+              <span class="m3d-brand"><span class="m3d-mark"></span><span id="m3d-name">ingatin</span></span>
+              <span class="m3d-icons"><span class="ms">search</span><span class="ms">account_circle</span></span>
+            </div>
+            <div class="m3d-body">
+              <div class="m3d-hero">
+                <p class="m3d-over">Contoh komponen</p>
+                <p class="m3d-title">Halo, ini website Anda.</p>
+                <div class="m3d-btns">
+                  <span class="m3d-btn filled">Pesan sekarang</span>
+                  <span class="m3d-btn tonal">Pelajari</span>
+                  <span class="m3d-btn outlined">Kontak</span>
+                </div>
+              </div>
+              <div class="m3d-row">
+                <div class="m3d-card">
+                  <span class="m3d-shape"></span>
+                  <p class="m3d-card-title">Kartu produk</p>
+                  <p class="m3d-card-sub">Warna permukaan &amp; teks menyesuaikan.</p>
+                  <div class="m3d-chips"><span class="sel"><span class="ms">check</span>Dipilih</span><span>Pilihan</span></div>
+                </div>
+                <div class="m3d-card m3d-card-2">
+                  <div class="m3d-switch-row"><span>Notifikasi</span><span class="m3d-switch on"></span></div>
+                  <div class="m3d-switch-row"><span>Langganan</span><span class="m3d-switch"></span></div>
+                  <div class="m3d-progress"><span></span></div>
+                  <div class="m3d-fab"><span class="ms">edit</span></div>
+                </div>
+              </div>
+              <div class="m3d-roles" id="m3d-roles"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="section" id="proses">
+      <div class="container">
+        <div class="section-head">
+          <p class="overline">Proses</p>
+          <h2 class="h2">Online dalam <span class="grad-text">3–4 minggu</span></h2>
+          <p class="lead">Perkiraan untuk company profile atau toko online standar. Anda melihat progres setiap minggu lewat tautan pratinjau.</p>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-when">Hari 1</span>
+            <span class="step-num">01</span>
+            <h3 class="h3">Konsultasi</h3>
+            <p class="muted">Ngobrol 30 menit soal bisnis, target pelanggan, dan contoh website yang Anda suka. Gratis.</p>
+          </li>
+          <li class="step">
+            <span class="step-when">Minggu 1</span>
+            <span class="step-num">02</span>
+            <h3 class="h3">Desain</h3>
+            <p class="muted">Struktur halaman, pilihan warna dari logo Anda, dan desain halaman utama untuk disetujui.</p>
+          </li>
+          <li class="step">
+            <span class="step-when">Minggu 2–3</span>
+            <span class="step-num">03</span>
+            <h3 class="h3">Pengembangan</h3>
+            <p class="muted">Semua halaman dibangun, diisi konten, dan diuji di ponsel, tablet, dan desktop.</p>
+          </li>
+          <li class="step">
+            <span class="step-when">Minggu 4</span>
+            <span class="step-num">04</span>
+            <h3 class="h3">Rilis &amp; pelatihan</h3>
+            <p class="muted">Website online di domain Anda, plus panduan singkat cara mengubah isi sendiri.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section section-tint" id="kontak">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <p class="overline">Kontak</p>
+          <h2 class="h2">Punya bisnis yang <span class="grad-text">perlu diingat?</span></h2>
+          <p class="lead">Ceritakan sedikit tentang bisnis Anda. Kami balas lewat WhatsApp di hari kerja yang sama, lengkap dengan saran halaman dan perkiraan biaya.</p>
+          <ul class="contact-list">
+            <li><span class="ms">chat</span><span><b>WhatsApp</b><br><a href="https://wa.me/6281200000000" target="_blank" rel="noopener">0812-0000-0000</a></span></li>
+            <li><span class="ms">mail</span><span><b>Email</b><br><a href="mailto:halo@ingatin.id">halo@ingatin.id</a></span></li>
+            <li><span class="ms">schedule</span><span><b>Jam kerja</b><br>Senin–Jumat, 09.00–17.00 WIB</span></li>
+          </ul>
+        </div>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-row">
+            <label class="tf">
+              <span class="tf-label">Nama</span>
+              <input type="text" class="tf-input" name="nama" required autocomplete="name" placeholder="Nama Anda" data-error="Nama wajib diisi">
+              <span class="tf-help"></span>
+            </label>
+            <label class="tf">
+              <span class="tf-label">WhatsApp</span>
+              <input class="tf-input" name="wa" type="tel" inputmode="tel" required pattern="^(\+62|62|0)8[0-9]{8,12}$" autocomplete="tel" placeholder="08xxxxxxxxxx" data-error="Format: 08xxxxxxxxxx">
+              <span class="tf-help"></span>
+            </label>
+          </div>
+          <label class="tf">
+            <span class="tf-label">Nama bisnis</span>
+            <input type="text" class="tf-input" name="bisnis" autocomplete="organization" placeholder="Opsional">
+          </label>
+          <fieldset class="tf">
+            <legend class="tf-label">Jenis website</legend>
+            <div class="choice-row" id="type-choice">
+              <label class="choice"><input type="radio" name="jenis" value="Company profile" checked><span>Company profile</span></label>
+              <label class="choice"><input type="radio" name="jenis" value="Toko online"><span>Toko online</span></label>
+              <label class="choice"><input type="radio" name="jenis" value="Hotel / villa"><span>Hotel / villa</span></label>
+              <label class="choice"><input type="radio" name="jenis" value="Lainnya"><span>Lainnya</span></label>
+            </div>
+          </fieldset>
+          <label class="tf">
+            <span class="tf-label">Ceritakan singkat</span>
+            <textarea class="tf-input" name="pesan" rows="4" maxlength="600" placeholder="Misalnya: distributor sembako di Bekasi, ingin katalog produk dan formulir mitra."></textarea>
+          </label>
+          <div class="form-foot">
+            <p class="muted small">Pesan dikirim lewat WhatsApp. Kami tidak menyimpan data Anda.</p>
+            <button class="btn btn-primary btn-lg" type="submit"><span class="ms">send</span>Kirim ke WhatsApp</button>
+          </div>
+          <div class="form-done" id="form-done" hidden tabindex="-1">
+            <span class="ms done-icon">check_circle</span>
+            <div>
+              <p class="h3">Pesan siap dikirim</p>
+              <p class="muted" id="done-text">Klik tombol di bawah untuk membuka WhatsApp dengan pesan yang sudah terisi.</p>
+              <div class="done-actions">
+                <a class="btn btn-primary" id="wa-open" href="#" target="_blank" rel="noopener"><span class="ms">chat</span>Buka WhatsApp</a>
+                <button class="btn btn-outlined" type="button" id="form-reset">Ubah pesan</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="logo" href="#top" aria-label="ingatin — ke atas">
+            <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="url(#lg2)"/><defs><linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3399FF"/><stop offset="1" stop-color="#0059B3"/></linearGradient></defs><rect x="13.5" y="13" width="5" height="12" rx="2.5" fill="#fff"/><circle cx="16" cy="8.5" r="2.9" fill="#fff"/><path d="M21.6 5.4a7.4 7.4 0 0 1 2.6 4.9" stroke="#CCE6FF" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+            <span class="logo-word">ingatin</span>
+          </a>
+          <p class="muted">Studio website untuk UMKM dan perusahaan Indonesia.</p>
+        </div>
+        <div class="footer-cols">
+          <div>
+            <h3>Portofolio</h3>
+            <ul>
+              <li><a href="portfolio/lumbung-niaga/index.html">Lumbung Niaga</a></li>
+              <li><a href="portfolio/rara-roastery/index.html">Rara Roastery</a></li>
+              <li><a href="portfolio/kirana-ubud/index.html">Kirana Ubud</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Layanan</h3>
+            <ul>
+              <li><a href="#layanan">Company profile</a></li>
+              <li><a href="#layanan">Toko online</a></li>
+              <li><a href="#layanan">Hotel &amp; villa</a></li>
+              <li><a href="#layanan">Perawatan website</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>ingatin</h3>
+            <ul>
+              <li><a href="#proses">Proses kerja</a></li>
+              <li><a href="#sistem-desain">Sistem desain</a></li>
+              <li><a href="#kontak">Kontak</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="muted small">© <span data-year>2026</span> ingatin. Semua merek di portofolio adalah fiktif untuk keperluan demo.</span>
+        <div class="footer-social">
+          <a class="icon-square" href="https://wa.me/6281200000000" target="_blank" rel="noopener" aria-label="WhatsApp ingatin"><span class="ms">chat</span></a>
+          <a class="icon-square" href="mailto:halo@ingatin.id" aria-label="Email ingatin"><span class="ms">mail</span></a>
+          <a class="icon-square" href="#top" aria-label="Kembali ke atas"><span class="ms">arrow_upward</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/schemes.js"></script>
+  <script src="assets/js/landing.js"></script>
+</body>
+</html>

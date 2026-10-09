@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rara Roastery — Kopi sangrai rumahan dari Bandung</title>
+  <meta name="description" content="Biji kopi single origin Nusantara yang disangrai sendiri oleh Rara setiap Senin dan Kamis. Pesan lewat website, bayar transfer atau QRIS, dikirim ke seluruh Indonesia.">
+  <meta name="theme-color" content="#fff8f6">
+  <script>try{var t=localStorage.getItem('m3-theme:rara-roastery');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght,ROND@6..144,100..1000,0..100&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0..1,0&icon_names=ac_unit,add,add_shopping_cart,agriculture,arrow_back,arrow_drop_down,block,calendar_month,chat,check,close,coffee,content_copy,dark_mode,delete,expand_more,face_3,filter_alt,help,light_mode,local_fire_department,local_shipping,location_on,menu,qr_code_2,receipt_long,remove,search,search_off,send,shopping_bag,storefront,water_drop&display=block" data-icons>
+  <link rel="stylesheet" href="../themes/rara-roastery.css">
+  <link rel="stylesheet" href="../m3/m3.css">
+  <link rel="stylesheet" href="../m3/shapes.css">
+  <link rel="stylesheet" href="site.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%237c330c'/%3E%3Cellipse cx='16' cy='16' rx='6' ry='9' fill='%23ffdbcd'/%3E%3Cpath d='M16 7c-2 4 2 14 0 18' stroke='%237c330c' stroke-width='1.6' fill='none'/%3E%3C/svg%3E">
+</head>
+<body data-site="rara-roastery">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+
+  <div class="demo-bar">
+    <div class="container">
+      <span>Demo portofolio <b>Website Jualan Pribadi</b><span class="hide-compact"> · dibuat oleh ingatin</span></span>
+      <a href="../../index.html#portofolio"><span class="ms">arrow_back</span>Kembali ke ingatin</a>
+    </div>
+  </div>
+
+  <header class="top-app-bar">
+    <div class="container bar">
+      <button class="icon-btn menu-btn" type="button" aria-label="Buka menu" data-dialog-open="drawer"><span class="ms">menu</span></button>
+      <a class="brand" href="#top" aria-label="Rara Roastery — ke atas">
+        <span class="brand-mark shape-cookie-9"><span class="ms fill">coffee</span></span>
+        <span>Rara Roastery</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="#katalog">Katalog</a>
+        <a href="#cerita">Cerita Rara</a>
+        <a href="#seduh">Panduan seduh</a>
+        <a href="#cara-pesan">Cara pesan</a>
+        <a href="#tanya">Tanya jawab</a>
+      </nav>
+      <div class="bar-actions">
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Ganti tema"><span class="ms">dark_mode</span></button>
+        <span class="icon-btn-wrap">
+          <button class="icon-btn" type="button" id="cart-btn" aria-label="Keranjang belanja (0 barang)" data-dialog-open="cart-sheet"><span class="ms">shopping_bag</span></button>
+          <span class="badge" id="cart-badge" data-count="0">0</span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <dialog class="nav-drawer" id="drawer" aria-label="Menu">
+    <div class="drawer-head">
+      <span class="brand"><span class="brand-mark shape-cookie-9"><span class="ms fill">coffee</span></span>Rara Roastery</span>
+      <button class="icon-btn" type="button" data-dialog-close aria-label="Tutup menu"><span class="ms">close</span></button>
+    </div>
+    <nav aria-label="Navigasi seluler">
+      <a class="drawer-item" href="#katalog"><span class="ms">storefront</span>Katalog</a>
+      <a class="drawer-item" href="#cerita"><span class="ms">face_3</span>Cerita Rara</a>
+      <a class="drawer-item" href="#seduh"><span class="ms">water_drop</span>Panduan seduh</a>
+      <a class="drawer-item" href="#cara-pesan"><span class="ms">receipt_long</span>Cara pesan</a>
+      <a class="drawer-item" href="#tanya"><span class="ms">help</span>Tanya jawab</a>
+    </nav>
+    <hr class="divider" style="margin:12px 16px">
+    <p class="drawer-label">Jadwal sangrai</p>
+    <p class="body-m on-surface-variant" style="padding:0 16px">Senin &amp; Kamis. Pesanan dikirim maksimal 2 hari setelah disangrai.</p>
+  </dialog>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="roast-pill"><span class="pulse" aria-hidden="true"></span><span id="next-roast">Sangrai berikutnya: Senin</span></p>
+          <h1 class="hero-title">Kopi yang disangrai <em>kemarin</em>, bukan bulan lalu.</h1>
+          <p class="body-l on-surface-variant hero-lead">Halo, saya Rara. Setiap Senin dan Kamis saya menyangrai biji kopi dari petani Gayo, Kintamani, Toraja, dan Temanggung dalam batch kecil 5 kg — lalu langsung mengirimkannya ke rumah Anda.</p>
+          <div class="row hero-actions">
+            <a class="btn btn-filled btn-m" href="#katalog"><span class="ms">storefront</span>Belanja kopi</a>
+            <a class="btn btn-tonal btn-m" href="#cerita">Kenalan dulu</a>
+          </div>
+          <ul class="hero-perks" aria-label="Keunggulan">
+            <li><span class="ms">local_fire_department</span>Batch kecil 5 kg</li>
+            <li><span class="ms">local_shipping</span>Kirim ke seluruh Indonesia</li>
+            <li><span class="ms">qr_code_2</span>Transfer / QRIS</li>
+          </ul>
+        </div>
+        <div class="hero-art">
+          <div class="hero-photo shape-cookie-12 morph" id="hero-photo">
+            <img src="img/hero.webp" alt="Kantong kopi, dripper, dan cangkir di meja kayu" width="1000" height="1500" fetchpriority="high">
+          </div>
+          <div class="hero-sticker shape-soft-burst" aria-hidden="true">
+            <span><b>Gratis</b><br>ongkir<br>&gt; 250rb</span>
+          </div>
+          <div class="hero-mini card elevated">
+            <img src="img/gayo.webp" alt="" width="64" height="64">
+            <div>
+              <p class="label-m on-surface-variant">Paling laris minggu ini</p>
+              <p class="title-s">Gayo Wine Process</p>
+            </div>
+            <button class="icon-btn filled" type="button" data-quick-add="gayo-wine" aria-label="Tambah Gayo Wine Process 200 g ke keranjang"><span class="ms">add</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KATALOG -->
+    <section class="section catalog" id="katalog">
+      <div class="container">
+        <div class="catalog-head">
+          <div class="stack" style="--gap:8px">
+            <h2 class="display-s emph">Katalog</h2>
+            <p class="body-l on-surface-variant">Semua kopi dikirim dalam bentuk biji utuh, kecuali Anda minta digiling.</p>
+          </div>
+          <div class="search-bar catalog-search">
+            <span class="ms" aria-hidden="true">search</span>
+            <label class="sr-only" for="search">Cari produk</label>
+            <input type="search" id="search" placeholder="Cari kopi, rasa, atau alat…" autocomplete="off">
+            <button class="icon-btn" type="button" id="search-clear" aria-label="Hapus pencarian" hidden><span class="ms">close</span></button>
+          </div>
+        </div>
+
+        <div class="catalog-tools">
+          <div class="chip-set scroll" role="group" aria-label="Kategori" id="cat-chips" data-single-select>
+            <button class="chip filter" type="button" aria-pressed="true" data-value="semua"><span class="ms chip-check">check</span>Semua</button>
+            <button class="chip filter" type="button" aria-pressed="false" data-value="arabika"><span class="ms chip-check">check</span>Arabika</button>
+            <button class="chip filter" type="button" aria-pressed="false" data-value="robusta"><span class="ms chip-check">check</span>Robusta &amp; blend</button>
+            <button class="chip filter" type="button" aria-pressed="false" data-value="praktis"><span class="ms chip-check">check</span>Drip bag</button>
+            <button class="chip filter" type="button" aria-pressed="false" data-value="alat"><span class="ms chip-check">check</span>Alat seduh</button>
+          </div>
+          <div class="field sort-field">
+            <select class="field-input" id="sort">
+              <option value="pop">Paling laris</option>
+              <option value="low">Harga terendah</option>
+              <option value="high">Harga tertinggi</option>
+              <option value="name">Nama A–Z</option>
+            </select>
+            <label class="field-label" for="sort">Urutkan</label>
+            <span class="ms field-trailing">arrow_drop_down</span>
+          </div>
+        </div>
+
+        <p class="body-m on-surface-variant result-count" id="result-count" aria-live="polite"></p>
+        <ul class="product-grid" id="product-grid"></ul>
+        <div class="empty-state" id="empty" hidden>
+          <span class="empty-shape shape-cookie-4"><span class="ms">search_off</span></span>
+          <p class="title-l">Belum ada yang cocok</p>
+          <p class="body-m on-surface-variant">Coba kata lain, misalnya “cokelat”, “buah”, atau “V60”.</p>
+          <button class="btn btn-tonal" type="button" id="reset-filter">Tampilkan semua</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERITA -->
+    <section class="section story" id="cerita">
+      <div class="container story-grid">
+        <figure class="story-photo">
+          <img src="img/roasting.webp" alt="Biji kopi diaduk di mesin sangrai" width="900" height="1350" loading="lazy">
+          <figcaption class="chip elevated static"><span class="ms">location_on</span>Dapur sangrai di Dago, Bandung</figcaption>
+        </figure>
+        <div class="story-copy">
+          <span class="overline">Cerita Rara</span>
+          <h2 class="display-s emph">Dari dapur rumah, satu mesin 5 kg, dan banyak catatan.</h2>
+          <p class="body-l on-surface-variant text-pretty">Saya mulai menyangrai kopi tahun 2020 dengan wajan dan kompor. Sekarang ada satu mesin sangrai kecil di dapur belakang, buku catatan profil sangrai untuk setiap biji, dan empat kebun yang saya kunjungi sendiri setiap musim panen.</p>
+          <p class="body-l on-surface-variant text-pretty">Karena batch-nya kecil, stok sering habis. Itu sengaja — kopi paling enak dinikmati 5 sampai 30 hari setelah disangrai.</p>
+          <div class="story-notes">
+            <div class="note"><span class="note-shape shape-clover-4"><span class="ms">agriculture</span></span><p><b>4 kebun mitra</b><br><span class="on-surface-variant">Gayo, Kintamani, Toraja, Temanggung</span></p></div>
+            <div class="note"><span class="note-shape shape-sunny"><span class="ms">calendar_month</span></span><p><b>Sangrai 2× seminggu</b><br><span class="on-surface-variant">Tanggal sangrai tertulis di kemasan</span></p></div>
+          </div>
+          <p class="signature" aria-label="Tanda tangan Rara">— Rara</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANDUAN SEDUH -->
+    <section class="section brew" id="seduh">
+      <div class="container">
+        <div class="section-head">
+          <span class="overline">Panduan seduh</span>
+          <h2 class="display-s emph">Takaran yang saya pakai sendiri di rumah.</h2>
+        </div>
+        <div class="brew-card card filled surface-xxl">
+          <div class="brew-tabs-wrap">
+            <div class="tabs" role="tablist" aria-label="Metode seduh">
+              <button type="button" class="tab" role="tab" id="tab-v60" aria-controls="panel-v60" aria-selected="true"><span><span class="ms">filter_alt</span>V60</span></button>
+              <button type="button" class="tab" role="tab" id="tab-tubruk" aria-controls="panel-tubruk" aria-selected="false" tabindex="-1"><span><span class="ms">coffee</span>Tubruk</span></button>
+              <button type="button" class="tab" role="tab" id="tab-cold" aria-controls="panel-cold" aria-selected="false" tabindex="-1"><span><span class="ms">ac_unit</span>Cold brew</span></button>
+            </div>
+            <div class="tab-panel brew-panel" role="tabpanel" id="panel-v60" aria-labelledby="tab-v60">
+              <dl class="brew-stats"><div><dt>Kopi</dt><dd>15 g</dd></div><div><dt>Air</dt><dd>225 ml</dd></div><div><dt>Suhu</dt><dd>92 °C</dd></div><div><dt>Waktu</dt><dd>2:45</dd></div></dl>
+              <ol class="brew-steps"><li>Giling sedang–halus, seperti garam dapur.</li><li>Tuang 40 ml air, tunggu 40 detik (blooming).</li><li>Tuang pelan memutar sampai 225 ml di menit ke-2.</li><li>Biarkan menetes habis, aduk, sajikan.</li></ol>
+            </div>
+            <div class="tab-panel brew-panel" role="tabpanel" id="panel-tubruk" aria-labelledby="tab-tubruk" hidden>
+              <dl class="brew-stats"><div><dt>Kopi</dt><dd>12 g</dd></div><div><dt>Air</dt><dd>180 ml</dd></div><div><dt>Suhu</dt><dd>94 °C</dd></div><div><dt>Waktu</dt><dd>4:00</dd></div></dl>
+              <ol class="brew-steps"><li>Giling halus, seperti pasir pantai.</li><li>Tuang air setengah, aduk 3 kali.</li><li>Tambah sisa air, diamkan 4 menit.</li><li>Ambil ampas yang mengapung, nikmati pelan-pelan.</li></ol>
+            </div>
+            <div class="tab-panel brew-panel" role="tabpanel" id="panel-cold" aria-labelledby="tab-cold" hidden>
+              <dl class="brew-stats"><div><dt>Kopi</dt><dd>100 g</dd></div><div><dt>Air</dt><dd>1 liter</dd></div><div><dt>Suhu</dt><dd>Dingin</dd></div><div><dt>Waktu</dt><dd>14 jam</dd></div></dl>
+              <ol class="brew-steps"><li>Giling kasar, seperti gula pasir kasar.</li><li>Campur dengan air matang dingin di toples.</li><li>Simpan di kulkas 12–16 jam.</li><li>Saring dua kali, tahan 5 hari di kulkas.</li></ol>
+            </div>
+          </div>
+          <div class="brew-photo">
+            <img src="img/seduh.webp" alt="Kopi diseduh dengan dripper kaca" width="800" height="1422" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARA PESAN -->
+    <section class="section" id="cara-pesan">
+      <div class="container">
+        <div class="section-head">
+          <span class="overline">Cara pesan</span>
+          <h2 class="display-s emph">Empat langkah, tanpa perlu bikin akun.</h2>
+        </div>
+        <ol class="steps">
+          <li><span class="step-n shape-cookie-6">1</span><div><h3 class="title-l">Pilih kopi</h3><p class="body-m on-surface-variant">Pilih ukuran dan gilingan, lalu masukkan ke keranjang.</p></div></li>
+          <li><span class="step-n shape-clover-4">2</span><div><h3 class="title-l">Kirim pesanan</h3><p class="body-m on-surface-variant">Isi alamat di keranjang. Ringkasan pesanan terkirim ke WhatsApp Rara.</p></div></li>
+          <li><span class="step-n shape-pentagon">3</span><div><h3 class="title-l">Bayar</h3><p class="body-m on-surface-variant">Transfer BCA / BSI atau QRIS. Rara mengonfirmasi dalam 1 jam (09.00–20.00).</p></div></li>
+          <li><span class="step-n shape-sunny">4</span><div><h3 class="title-l">Disangrai &amp; dikirim</h3><p class="body-m on-surface-variant">Pesanan disangrai di jadwal terdekat, lalu dikirim dengan nomor resi.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-section" id="tanya">
+      <div class="container faq-grid">
+        <div class="stack" style="--gap:12px">
+          <span class="overline">Tanya jawab</span>
+          <h2 class="display-s emph">Yang sering ditanyakan</h2>
+          <p class="body-l on-surface-variant">Belum terjawab? Chat Rara langsung.</p>
+          <a class="btn btn-tonal" href="https://wa.me/6281300000000?text=Halo%20Rara%2C%20saya%20mau%20tanya%20soal%20kopi." target="_blank" rel="noopener" style="justify-self:start"><span class="ms">chat</span>Chat di WhatsApp</a>
+        </div>
+        <div class="faq">
+          <details class="faq-item" open>
+            <summary><span>Kapan kopi saya dikirim?</span><span class="ms">expand_more</span></summary>
+            <p>Pesanan yang lunas sampai Minggu 20.00 disangrai Senin dan dikirim Selasa. Pesanan sampai Rabu 20.00 disangrai Kamis dan dikirim Jumat.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span>Bisa minta digiling?</span><span class="ms">expand_more</span></summary>
+            <p>Bisa. Pilih gilingan di detail produk (tubruk, V60, atau espresso). Tapi biji utuh tetap paling awet — gilingan sebaiknya habis dalam 2 minggu.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span>Berapa ongkos kirimnya?</span><span class="ms">expand_more</span></summary>
+            <p>Bandung Rp10.000, Pulau Jawa Rp18.000, luar Jawa Rp35.000. Gratis ongkir untuk belanja di atas Rp250.000.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span>Kopi saya datang rusak atau salah, bagaimana?</span><span class="ms">expand_more</span></summary>
+            <p>Kirim foto kemasan dan video unboxing lewat WhatsApp maksimal 2 hari setelah barang diterima. Rara akan mengganti tanpa biaya.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span>Melayani pesanan untuk kafe?</span><span class="ms">expand_more</span></summary>
+            <p>Ya, untuk pembelian mulai 5 kg per bulan ada harga khusus dan profil sangrai yang bisa disesuaikan. Hubungi lewat WhatsApp.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="stack" style="--gap:12px">
+          <span class="brand"><span class="brand-mark shape-cookie-9"><span class="ms fill">coffee</span></span>Rara Roastery</span>
+          <p>Kopi sangrai rumahan dari Dago, Bandung. Usaha perorangan milik Rara Paramitha.</p>
+        </div>
+        <div>
+          <h3>Belanja</h3>
+          <ul><li><a href="#katalog">Katalog</a></li><li><a href="#cara-pesan">Cara pesan</a></li><li><a href="#tanya">Ongkos kirim</a></li></ul>
+        </div>
+        <div>
+          <h3>Ikuti</h3>
+          <ul><li><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram @rararoastery</a></li><li><a href="https://wa.me/6281300000000" target="_blank" rel="noopener">WhatsApp 0813-0000-0000</a></li></ul>
+        </div>
+        <div>
+          <h3>Pembayaran</h3>
+          <ul><li>Transfer BCA &amp; BSI</li><li>QRIS (semua e-wallet)</li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Rara Roastery (usaha fiktif untuk demo)</span>
+        <span class="made-by">Website oleh <a href="../../index.html">ingatin</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="fab-dock">
+    <button class="fab ext primary hidden" type="button" id="fab-cart" data-dialog-open="cart-sheet"><span class="ms">shopping_bag</span><span id="fab-cart-label">Keranjang</span></button>
+  </div>
+
+  <!-- Product detail -->
+  <dialog class="m3-dialog wide fullscreen-compact product-dialog" id="product-dialog" aria-labelledby="pd-title">
+    <div class="pd-layout">
+      <div class="pd-media">
+        <img id="pd-img" src="img/gayo.webp" alt="" width="800" height="800">
+        <button class="icon-btn pd-close" type="button" data-dialog-close aria-label="Tutup"><span class="ms">close</span></button>
+      </div>
+      <div class="pd-info">
+        <p class="label-l primary-text" id="pd-origin"></p>
+        <h2 class="headline-m" id="pd-title">Detail produk</h2>
+        <p class="body-m on-surface-variant" id="pd-desc"></p>
+        <div class="chip-set" id="pd-notes"></div>
+        <dl class="pd-specs" id="pd-specs"></dl>
+        <div class="pd-roast" id="pd-roast-wrap">
+          <span class="label-m on-surface-variant">Tingkat sangrai</span>
+          <div class="roast-track" aria-hidden="true"><span id="pd-roast-bar"></span></div>
+          <div class="roast-scale label-s on-surface-variant" aria-hidden="true"><span>Light</span><span>Medium</span><span>Dark</span></div>
+          <p class="sr-only" id="pd-roast-text"></p>
+        </div>
+        <div class="stack" style="--gap:8px" id="pd-size-wrap">
+          <span class="label-l">Ukuran</span>
+          <div class="btn-group block" role="group" aria-label="Ukuran" id="pd-size" data-single-select></div>
+        </div>
+        <div class="field" id="pd-grind-wrap">
+          <select class="field-input" id="pd-grind">
+            <option>Biji utuh</option>
+            <option>Giling tubruk (halus)</option>
+            <option>Giling V60 (sedang)</option>
+            <option>Giling espresso (sangat halus)</option>
+            <option>Giling cold brew (kasar)</option>
+          </select>
+          <label class="field-label" for="pd-grind">Gilingan</label>
+          <span class="ms field-trailing">arrow_drop_down</span>
+        </div>
+        <div class="pd-buy">
+          <div class="stepper" aria-label="Jumlah">
+            <button class="icon-btn" type="button" id="pd-minus" aria-label="Kurangi jumlah"><span class="ms">remove</span></button>
+            <output id="pd-qty" aria-live="polite">1</output>
+            <button class="icon-btn" type="button" id="pd-plus" aria-label="Tambah jumlah"><span class="ms">add</span></button>
+          </div>
+          <button class="btn btn-filled btn-m pd-add" type="button" id="pd-add"><span class="ms">add_shopping_cart</span><span id="pd-add-label">Tambah</span></button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Cart -->
+  <dialog class="side-sheet" id="cart-sheet" aria-labelledby="cart-title">
+    <div class="sheet-head">
+      <h2 id="cart-title">Keranjang</h2>
+      <button class="icon-btn" type="button" data-dialog-close aria-label="Tutup keranjang"><span class="ms">close</span></button>
+    </div>
+    <div class="sheet-body">
+      <div class="cart-empty" id="cart-empty">
+        <span class="empty-shape shape-cookie-9"><span class="ms">shopping_bag</span></span>
+        <p class="title-m">Keranjang masih kosong</p>
+        <p class="body-m on-surface-variant">Kopi yang Anda pilih akan muncul di sini.</p>
+        <button class="btn btn-tonal" type="button" data-dialog-close data-goto="#katalog">Lihat katalog</button>
+      </div>
+      <ul class="cart-list" id="cart-list"></ul>
+      <form class="checkout" id="checkout" novalidate hidden>
+        <div class="ship-progress" id="ship-progress">
+          <p class="body-s" id="ship-text"></p>
+          <div class="ship-track"><span id="ship-bar"></span></div>
+        </div>
+        <div class="field">
+          <input type="text" class="field-input" id="c-name" name="nama" placeholder=" " required autocomplete="name" data-error="Nama wajib diisi">
+          <label class="field-label" for="c-name">Nama penerima</label>
+        </div>
+        <div class="field">
+          <input class="field-input" id="c-wa" name="wa" type="tel" inputmode="tel" placeholder=" " required pattern="^(\+62|62|0)8[0-9]{8,12}$" autocomplete="tel" data-error="Format nomor: 08xxxxxxxxxx">
+          <label class="field-label" for="c-wa">Nomor WhatsApp</label>
+          <span class="field-support">Untuk konfirmasi pembayaran</span>
+        </div>
+        <div class="field">
+          <select class="field-input" id="c-zone" name="zona" required data-error="Pilih wilayah pengiriman">
+            <option value="" disabled selected></option>
+            <option value="bandung">Bandung Raya — Rp10.000</option>
+            <option value="jawa">Pulau Jawa — Rp18.000</option>
+            <option value="luar">Luar Jawa — Rp35.000</option>
+            <option value="ambil">Ambil sendiri di Dago — gratis</option>
+          </select>
+          <label class="field-label" for="c-zone">Wilayah pengiriman</label>
+          <span class="ms field-trailing">arrow_drop_down</span>
+        </div>
+        <div class="field" id="addr-field">
+          <textarea class="field-input" id="c-addr" name="alamat" placeholder=" " rows="3" required autocomplete="street-address" data-error="Alamat wajib diisi"></textarea>
+          <label class="field-label" for="c-addr">Alamat lengkap</label>
+        </div>
+        <div class="voucher">
+          <div class="field">
+            <input type="text" class="field-input" id="c-voucher" placeholder=" " autocomplete="off" style="text-transform:uppercase">
+            <label class="field-label" for="c-voucher">Kode voucher</label>
+            <span class="field-support" id="voucher-msg">Coba: KOPIPERTAMA</span>
+          </div>
+          <button class="btn btn-outlined" type="button" id="apply-voucher">Pakai</button>
+        </div>
+      </form>
+    </div>
+    <div class="sheet-foot" id="cart-foot" hidden>
+      <dl class="totals">
+        <div><dt>Subtotal</dt><dd id="t-sub">Rp0</dd></div>
+        <div id="t-disc-row" hidden><dt>Diskon voucher</dt><dd id="t-disc">−Rp0</dd></div>
+        <div><dt>Ongkos kirim</dt><dd id="t-ship">Pilih wilayah</dd></div>
+        <div class="grand"><dt>Total</dt><dd id="t-total">Rp0</dd></div>
+      </dl>
+      <button class="btn btn-filled btn-m block" type="submit" form="checkout" id="checkout-btn"><span class="ms">send</span>Pesan lewat WhatsApp</button>
+    </div>
+  </dialog>
+
+  <dialog class="m3-dialog" id="order-dialog" data-focus-self aria-labelledby="order-title">
+    <div class="dialog-body order-body">
+      <span class="order-shape shape-soft-burst"><span class="ms">check</span></span>
+      <h2 class="headline-s" id="order-title">Pesanan siap dikirim ke Rara</h2>
+      <p class="body-m on-surface-variant">Di situs asli, tombol di bawah membuka WhatsApp dengan ringkasan ini. Di demo, pesan ditampilkan di sini saja.</p>
+      <pre class="order-preview" id="order-preview"></pre>
+    </div>
+    <div class="dialog-actions">
+      <button class="btn btn-text" type="button" id="copy-order"><span class="ms">content_copy</span>Salin</button>
+      <a class="btn btn-filled" id="wa-link" href="#" target="_blank" rel="noopener"><span class="ms">chat</span>Buka WhatsApp</a>
+    </div>
+  </dialog>
+
+  <script src="../m3/m3.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>
