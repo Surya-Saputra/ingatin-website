@@ -1,6 +1,18 @@
 [
   {
     "date": "2026-10-09",
+    "macrostructure": "Workbench",
+    "theme": "custom",
+    "theme_axes": "light / geometric-sans / cool",
+    "vibe": "korporat tegas, navy dalam, biru ingatin",
+    "enrichment": "none (real screenshots)",
+    "nav": "N1b",
+    "footer": "Ft5",
+    "genre": "modern-minimal",
+    "brief": "ingatin · redesign ke agensi digital korporat; placeholder bertanda untuk logo, testimoni, harga"
+  },
+  {
+    "date": "2026-10-09",
     "macrostructure": "Split Studio",
     "theme": "custom",
     "theme_axes": "light / roman-serif / cool",
